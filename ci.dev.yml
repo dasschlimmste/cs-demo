@@ -18,9 +18,9 @@ run:
         - port: 9000
           path: /
     env:
-      DATABASE_USER: myuser${{ vault['db-user'] }}
-      DATABASE_PASSWORD: myuser${{ vault['db-pw'] }}
-      DATABASE_HOST: ms-postgres-v1-80-landscape-58399-dp-default-db.ms-postgres
+      DATABASE_USER: myuser${{ vault['DATABASE_USER'] }}
+      DATABASE_PASSWORD: myuser${{ vault['DATABASE_PASSWORD'] }}
+      DATABASE_HOST: ms-postgres-v1-{{ team.id }}-landscape-{{ workspace.id }}-dp-default-db.ms-postgres
       DATABASE_PORT: 5432
     runAsUser: 1501
     runAsGroup: 1010
@@ -44,5 +44,5 @@ run:
     config:
       version: "17.9"
     secrets:
-      userPassword: ${{ vault['db-user'] }}
-      superuserPassword: ${{ vault['db-pw'] }}
+      userPassword: ${{ vault['DATABASE_PASSWORD'] }}
+      superuserPassword: ${{ vault['DATABASE_PASSWORD'] }}

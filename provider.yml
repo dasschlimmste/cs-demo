@@ -1,6 +1,6 @@
 name: cs-demo
 schemaVersion: v0
-author: me
+author: Daniel
 displayName: cs-demo
 iconUrl: https://example.com/icon.png
 category: Lifestyle
@@ -13,26 +13,25 @@ backend:
 
 configSchema:
   type: object
-  properties:
-    VERSION:
-      type: string
-      description: Application version to deploy
-      enum: ['v1', 'v2', 'v3']
-      default: v1
-  required: ['VERSION']
+  properties: {}
 
 secretsSchema:
   type: object
   properties:
-    password:
+    DATABASE_USER:
+      type: string
+    DATABASE_PASSWORD:
       type: string
       format: password
-
+  
 detailsSchema:
   type: object
   properties:
-    hostname:
+    DATABASE_HOST:
       type: string
+    DATABASE_PORT:
+      type: integer
+      
 
 plans:
   - id: 0

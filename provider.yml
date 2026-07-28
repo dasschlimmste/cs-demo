@@ -1,0 +1,48 @@
+name: cs-demo
+schemaVersion: v0
+author: me
+displayName: cs-demo
+iconUrl: https://example.com/icon.png
+category: Lifestyle
+description: |
+  A one-line description of your service, shown on the catalog card.
+
+backend:
+  landscape:
+    gitUrl: https://github.com/dasschlimmste/cs-demo
+
+configSchema:
+  type: object
+  properties:
+    VERSION:
+      type: string
+      description: Application version to deploy
+      enum: ['v1', 'v2', 'v3']
+      default: v1
+  required: ['VERSION']
+
+secretsSchema:
+  type: object
+  properties:
+    password:
+      type: string
+      format: password
+
+detailsSchema:
+  type: object
+  properties:
+    hostname:
+      type: string
+
+plans:
+  - id: 0
+    name: Default Plan
+    description: Resource usage depends on the CI profile of the landscape. There are no custom plans for landscape-based providers.
+    parameters: {}
+
+versions:
+  0.0.1:
+    ciProfile: ci.dev.yml
+    # gitRef can be a commit hash, branch, or tag
+    gitRef: main
+    description: Initial version

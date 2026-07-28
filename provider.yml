@@ -41,7 +41,7 @@ plans:
 
 versions:
   0.0.1:
-    ciProfile: ci.dev.yml
+    ciProfile: dev
     # gitRef can be a commit hash, branch, or tag
     gitRef: main
     description: Initial version

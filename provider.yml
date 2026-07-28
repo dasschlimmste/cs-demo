@@ -26,13 +26,8 @@ secretsSchema:
   
 detailsSchema:
   type: object
-  properties:
-    DATABASE_HOST:
-      type: string
-    DATABASE_PORT:
-      type: integer
+  properties: {}
       
-
 plans:
   - id: 0
     name: Default Plan
